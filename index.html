@@ -2,79 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Special Message for Victoria</title>
   <style>
     body {
-      background-color: #fbd3e1; /* Light Pink */
+      background-color: #f6f6f6;
       text-align: center;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Helvetica', sans-serif;
       margin: 0;
       padding: 0;
+      overflow: hidden;
     }
 
     .container {
-      max-width: 80%;
+      max-width: 800px;
       margin: 50px auto;
-      padding: 20px;
-      background-color: white;
+      padding: 30px;
+      background-color: #fff;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
 
     h1 {
-      color: #ff69b4; /* Hot Pink */
+      color: #3498db; /* Blue */
     }
 
     p {
-      color: #ff69b4; /* Hot Pink */
+      color: #555;
       margin-bottom: 20px;
     }
 
     input {
-      padding: 10px;
+      padding: 15px;
       margin: 10px 0;
-      width: 80%;
-      border: 2px solid #ff69b4; /* Hot Pink */
+      width: 60%;
+      border: 2px solid #3498db; /* Blue */
       border-radius: 5px;
     }
 
     button {
-      padding: 10px 20px;
-      background-color: #ff69b4; /* Hot Pink */
-      color: white;
+      padding: 15px 30px;
+      background-color: #3498db; /* Blue */
+      color: #fff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
 
     button:hover {
-      background-color: #ff1493; /* Deep Pink */
+      background-color: #2980b9; /* Darker Blue */
     }
 
     .result {
-      margin-top: 20px;
+      margin-top: 30px;
       font-size: 18px;
-      color: #ff69b4; /* Hot Pink */
-    }
-
-    .hearts {
-      font-size: 24px;
-      color: #ff69b4; /* Hot Pink */
-      margin-top: 20px;
+      color: #3498db; /* Blue */
     }
 
     /* Larger font for the message */
     #largerMessage {
-      font-size: 24px;
-      margin-top: 20px;
+      font-size: 30px;
+      margin-top: 30px;
+      color: #2ecc71; /* Green */
+    }
+
+    /* Festive Animation - SVG Heart */
+    .heart-svg {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+      animation: heartbeat 1s infinite alternate;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Special Message for Victoria</h1>
-    <p>Cine e cea mai cumintica din sat?</p>
+    <p>Cine la noi e cumintica satului?</p>
     <form id="myForm" onsubmit="return submitForm()">
       <input type="text" id="secretWord" placeholder="Introdu secretul" required>
       <br>
@@ -82,7 +98,9 @@
     </form>
     <div id="result" class="result"></div>
     <div id="largerMessage" class="result"></div>
-    <div class="hearts">💖💖💖</div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-svg">
+      <path fill="#e74c3c" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C16.09 3.81 17.76 3 19.5 3 22.58 3 25 5.42 25 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
   </div>
 
   <script>
@@ -90,10 +108,14 @@
       var secretWord = document.getElementById('secretWord').value.toLowerCase();
       var resultDiv = document.getElementById('result');
       var largerMessageDiv = document.getElementById('largerMessage');
+      var containerDiv = document.querySelector('.container');
 
       if (secretWord === 'gabriela') {
-        largerMessageDiv.innerHTML = '<p class="result">kohaiu</p>';
-        resultDiv.innerHTML = ''; // Clear the result message
+        // Display festive animation and clear other content
+        containerDiv.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-svg">' +
+                                  '<path fill="#e74c3c" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C16.09 3.81 17.76 3 19.5 3 22.58 3 25 5.42 25 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>' +
+                                  '</svg>' +
+                                  '<div id="largerMessage" class="result">kohaiu</div>';
       } else {
         resultDiv.innerHTML = '<p class="result">Oops! Acesta nu este cuvântul corect. Încearcă din nou!</p>';
         largerMessageDiv.innerHTML = ''; // Clear the larger message
