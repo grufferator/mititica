@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Special Message for Victoria</title>
+  <style>
+    body {
+      background-color: #fbd3e1; /* Light Pink */
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 80%;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #ff69b4; /* Hot Pink */
+    }
+
+    p {
+      color: #ff69b4; /* Hot Pink */
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 80%;
+      border: 2px solid #ff69b4; /* Hot Pink */
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ff69b4; /* Hot Pink */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff1493; /* Deep Pink */
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ff69b4; /* Hot Pink */
+    }
+
+    .hearts {
+      font-size: 24px;
+      color: #ff69b4; /* Hot Pink */
+      margin-top: 20px;
+    }
+
+    /* Larger font for the message */
+    #largerMessage {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Special Message for Victoria</h1>
+    <p>Cine e cea mai cumintica din sat?</p>
+    <form id="myForm" onsubmit="return submitForm()">
+      <input type="text" id="secretWord" placeholder="Introdu secretul" required>
+      <br>
+      <button type="submit">Trimite</button>
+    </form>
+    <div id="result" class="result"></div>
+    <div id="largerMessage" class="result"></div>
+    <div class="hearts">💖💖💖</div>
+  </div>
+
+  <script>
+    function submitForm() {
+      var secretWord = document.getElementById('secretWord').value.toLowerCase();
+      var resultDiv = document.getElementById('result');
+      var largerMessageDiv = document.getElementById('largerMessage');
+
+      if (secretWord === 'gabriela') {
+        largerMessageDiv.innerHTML = '<p class="result">kohaiu</p>';
+        resultDiv.innerHTML = ''; // Clear the result message
+      } else {
+        resultDiv.innerHTML = '<p class="result">Oops! Acesta nu este cuvântul corect. Încearcă din nou!</p>';
+        largerMessageDiv.innerHTML = ''; // Clear the larger message
+      }
+
+      return false; // Prevents form submission
+    }
+  </script>
+</body>
+</html>
