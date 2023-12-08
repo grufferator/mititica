@@ -7,7 +7,7 @@
     <title>Special Message for Nikro</title>
     <style>
         body {
-            background-color: #333; /* Dark background color */
+            background-color: #1a1a1a; /* Dark background color for a metal band theme */
             text-align: center;
             font-family: 'Helvetica', sans-serif;
             margin: 0;
@@ -20,18 +20,18 @@
             max-width: 800px;
             margin: 50px auto;
             padding: 30px;
-            background-color: #444; /* Darker container background color */
+            background-color: #333; /* Darker container background color */
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
         h1 {
-            color: #3498db; /* Blue */
+            color: #ff6600; /* Orange color for a metal band feel */
         }
 
         p {
-            color: #555;
+            color: #ccc; /* Lighter text color */
             margin-bottom: 20px;
         }
 
@@ -39,7 +39,7 @@
             padding: 15px;
             margin: 10px 0;
             width: 60%;
-            border: 2px solid #3498db; /* Blue */
+            border: 2px solid #ff6600; /* Orange color for input border */
             border-radius: 5px;
             color: #333; /* Dark color for text input */
             background-color: #fff; /* Light background color for text input */
@@ -47,7 +47,7 @@
 
         button {
             padding: 15px 30px;
-            background-color: #3498db; /* Blue */
+            background-color: #ff6600; /* Orange color for button background */
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -55,40 +55,20 @@
         }
 
         button:hover {
-            background-color: #2980b9; /* Darker Blue */
+            background-color: #cc5500; /* Darker Orange color on hover */
         }
 
         .result {
             margin-top: 30px;
             font-size: 18px;
-            color: #3498db; /* Blue */
+            color: #ff6600; /* Orange color for result text */
         }
 
         /* Larger font for the message */
         #largerMessage {
             font-size: 30px;
             margin-top: 30px;
-            color: #2ecc71; /* Green */
-        }
-
-        /* Festive Animation - SVG Guitar */
-        .guitar-svg {
-            position: absolute;
-            bottom: 20px; /* Moved the guitar lower */
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-            animation: heartbeat 1s infinite alternate;
-        }
-
-        @keyframes heartbeat {
-            0% {
-                transform: scale(1);
-            }
-
-            100% {
-                transform: scale(1.2);
-            }
+            color: #2ecc71; /* Green color */
         }
     </style>
 </head>
@@ -104,11 +84,6 @@
         </form>
         <div id="result" class="result"></div>
         <div id="largerMessage" class="result"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="guitar-svg">
-            <!-- Heavy Metal Guitar SVG Path -->
-            <path fill="#bdc3c7"
-                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C16.09 3.81 17.76 3 19.5 3 22.58 3 25 5.42 25 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-        </svg>
     </div>
 
     <script>
@@ -120,10 +95,7 @@
 
             if (secretWord === 'super') {
                 // Display festive animation and clear other content
-                containerDiv.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="guitar-svg">' +
-                    '<path fill="#bdc3c7" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C16.09 3.81 17.76 3 19.5 3 22.58 3 25 5.42 25 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />' +
-                    '</svg>' +
-                    '<div id="largerMessage" class="result">metal ve4en!</div>';
+                containerDiv.innerHTML = '<div id="largerMessage" class="result">metal ve4en!</div>';
             } else {
                 resultDiv.innerHTML = '<p class="result">Oops! Acesta nu este cuvântul corect. Încearcă din nou!</p>';
                 largerMessageDiv.innerHTML = ''; // Clear the larger message
