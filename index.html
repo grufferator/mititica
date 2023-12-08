@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Message for Victoria</title>
+  <title>Special Message for Nikro</title>
   <style>
     body {
       background-color: #f6f6f6;
@@ -89,8 +89,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>Special Message for Victoria</h1>
-    <p>Cine la noi e cumintica satului?</p>
+    <h1>Special Message for Nikro</h1>
+    <p>Cum a fost concert?</p>
     <form id="myForm" onsubmit="return submitForm()">
       <input type="text" id="secretWord" placeholder="Introdu secretul" required>
       <br>
@@ -110,12 +110,12 @@
       var largerMessageDiv = document.getElementById('largerMessage');
       var containerDiv = document.querySelector('.container');
 
-      if (secretWord === 'gabriela') {
+      if (secretWord === 'super') {
         // Display festive animation and clear other content
         containerDiv.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-svg">' +
                                   '<path fill="#e74c3c" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C16.09 3.81 17.76 3 19.5 3 22.58 3 25 5.42 25 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>' +
                                   '</svg>' +
-                                  '<div id="largerMessage" class="result">kohaiu</div>';
+                                  '<div id="largerMessage" class="result">metal ve4en!</div>';
       } else {
         resultDiv.innerHTML = '<p class="result">Oops! Acesta nu este cuvântul corect. Încearcă din nou!</p>';
         largerMessageDiv.innerHTML = ''; // Clear the larger message
